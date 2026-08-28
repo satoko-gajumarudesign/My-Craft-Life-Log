@@ -1,0 +1,38 @@
+.p-archive-news {
+    padding: 3rem 0 8rem;
+}
+
+.p-archive-news__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.p-archive-news__item {
+    padding-left: 2rem;
+    transition: all 0.3s;
+}
+
+.p-archive-news__item:hover {
+    color: var(--color-accent);
+}
+
+.p-archive-news__inner {
+    display: flex;
+    gap: 3rem;
+}
+
+.p-archive-news__title {
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+}
+
+.p-archive-news__time {
+    color: var(--text-sub);
+    transition: all 0.3s;
+
+}
+
+.p-archive-news__item:hover .p-archive-news__time {
+    color: var(--color-accent);
+}

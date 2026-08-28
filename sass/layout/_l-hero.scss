@@ -1,0 +1,19 @@
+.l-hero {
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1200px;
+
+    @media (min-width: 768px) {
+        width: 80%;
+    }
+
+    @media (min-width: 1024px) {
+        width: 75%;
+    }
+
+    
+    &--spaced{
+        margin-top: 6rem;
+        margin-bottom: 10rem;
+    }
+}

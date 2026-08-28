@@ -1,0 +1,141 @@
+.p-single {
+    flex: 8;
+
+    &__title {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.p-single__time {
+    margin-bottom: 6rem;
+    font-size: var(--fs-xs);
+    color: var(--text-sub);
+    text-align: right;
+}
+
+.p-single__article {
+    line-height: 2;
+    padding-bottom: 3rem;
+
+    @media (min-width: 768px) {
+        padding-bottom: 6rem;
+    }
+}
+
+.p-single__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.p-single__content {
+    h2 {
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+
+    h2:not(:first-of-type) {
+        padding-top: 3rem;
+    }
+
+    .wp-block-image {
+        max-width: 100%;
+        margin: 0rem 1rem 3rem;
+
+        @media (min-width: 768px) {
+            max-width: 70%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        max-width: 750px;
+        margin-bottom: 2.5rem;
+    }
+
+    .wp-block-list {
+        margin-left: 0.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    li {
+        list-style: none;
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 0.8rem;
+            height: 0.8rem;
+            border: 2px solid var(--color-accent);
+            border-radius: 50%;
+        }
+    }
+}
+
+.p-single__ad-text {
+    text-align: center;
+    margin: 3rem 0;
+
+    a {
+        display: inline-block;
+        background-color: #d9825b;
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #c76f47;
+        }
+    }
+}
+
+.p-single__ad-banner {
+    text-align: center;
+}
+
+.wp-block-quote {
+    padding-left: 1rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-sub);
+    border-left: 3px solid var(--color-accent);
+
+    cite {
+        font-style: inherit;
+
+        a {
+            border-bottom: 1.5px solid var(--text-sub);
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: var(--color-accent);
+                border-bottom: 1.5px solid var(--color-accent);
+            }
+        }
+
+        &::before {
+            content: "（引用元：";
+        }
+
+        &::after {
+            content: "）";
+        }
+    }
+
+    p:last-of-type {
+        margin-bottom: 1rem;
+    }
+}

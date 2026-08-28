@@ -1,0 +1,8 @@
+.c-archive-border {
+    padding-bottom: 1rem;
+    border-bottom: 3px dashed var(--color-border);
+}
+
+.c-archive-border:last-of-type {
+    border-bottom: none;
+}

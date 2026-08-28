@@ -1,0 +1,16 @@
+.l-single {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 6rem;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: row;
+        gap: 8rem;
+    }
+
+    &--news {
+        margin-top: 6rem;
+    }
+}

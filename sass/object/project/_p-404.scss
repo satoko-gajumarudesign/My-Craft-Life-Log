@@ -1,0 +1,29 @@
+.p-404__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.p-404__title {
+    font-size: var(--fs-xl);
+    margin: 0;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.p-404__subtitle {
+    font-size: var(--fs-lg);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.p-404__text {
+    font-size: 16px;
+    color: var(--text-sub);
+    line-height: 1.8;
+    margin-bottom: 40px;
+}

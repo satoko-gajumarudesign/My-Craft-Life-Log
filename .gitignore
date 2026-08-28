@@ -1,0 +1,19 @@
+# サーバー固有の設定ファイル（絶対にあげてはいけない）
+wp-config.php
+.htaccess
+
+# ログファイル
+*.log
+
+# 開発用ツール（容量が膨大になるため）
+node_modules/
+dist/
+build/
+
+# メディアファイル（画像はGitHubではなくWP管理画面で扱うため）
+wp-content/uploads/
+
+# OSやエディタが勝手に作るファイル
+.DS_Store
+Thumbs.db
+.vscode/

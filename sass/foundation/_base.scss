@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--text-main);
+    font-family: var(--fontfamily-base);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}

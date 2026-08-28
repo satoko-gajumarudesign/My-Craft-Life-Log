@@ -1,0 +1,19 @@
+.c-marker-title {
+    text-align: center;
+}
+
+.c-marker-title__text {
+    display: inline-block;
+    padding: 0 0.5rem 0 1rem;
+    background-image: linear-gradient(to right, var(--color-accent) 60%, transparent 100%);
+    background-size: 100% 40%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    letter-spacing: 0.2em;
+    font-size: var(--fs-xl);
+    font-weight: 500;
+}
+
+.c-marker-title__text--sm {
+    font-size: var(--fs-lg);
+}

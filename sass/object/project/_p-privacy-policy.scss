@@ -1,0 +1,20 @@
+
+.p-privacy-policy {
+    .wp-block-heading {
+        padding-top: 2rem;
+        font-size: var(--fs-md);
+        font-weight: bold;
+    }
+
+    /* 万が一クラシックブロックなどでクラスがつかなかった場合のフォールバック */
+    h2:not([class^="wp-block"]) {
+        padding-top: 2rem;
+        font-weight: bold;
+        color: var(--color-accent);
+    }
+
+    .has-text-align-right {
+        padding-top: 4rem;
+        text-align: right;
+    }
+}

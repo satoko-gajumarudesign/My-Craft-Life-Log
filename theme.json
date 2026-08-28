@@ -1,0 +1,61 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "custom": false,
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "slug": "bg",
+                    "color": "#f3f3f3",
+                    "name": "背景色"
+                },
+                {
+                    "slug": "text-main",
+                    "color": "#333333",
+                    "name": "メインテキスト"
+                },
+                {
+                    "slug": "text-sub",
+                    "color": "#777777",
+                    "name": "サブテキスト"
+                },
+                {
+                    "slug": "border",
+                    "color": "#E0E0E0",
+                    "name": "ボーダー（線）"
+                },
+                {
+                    "slug": "accent",
+                    "color": "#D4A373",
+                    "name": "アクセントカラー"
+                }
+            ]
+        },
+        "typography": {
+            "customFontSize": false,
+            "dropCap": false,
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "lineHeight": false,
+            "textDecoration": false,
+            "textTransform": false
+        },
+        "spacing": {
+            "customMargin": false,
+            "customPadding": false,
+            "units": []
+        },
+        "border": {
+            "customColor": false,
+            "customRadius": false,
+            "customStyle": false,
+            "customWidth": false
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1000px"
+        }
+    }
+}

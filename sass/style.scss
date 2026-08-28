@@ -1,0 +1,55 @@
+// style.scss
+/*!
+Theme Name: my study blog
+Theme URI: 
+Author: satoko
+Description: 30代向けのリラックスしながら読める写真多めの雑誌風ブログテーマ
+Version: 1.0.0
+*/
+@use "foundation/reset";
+@use "foundation/base";
+
+@use "global/variables";
+
+@use "layout/l-header";
+@use "layout/l-footer";
+@use "layout/l-allpost-archive";
+@use "layout/l-contact";
+@use "layout/l-hero";
+@use "layout/l-privacy-policy";
+@use "layout/l-single";
+@use "layout/l-thanks";
+@use "layout/l-wrapper";
+
+@use "object/component/c-breadcrumb";
+@use "object/component/c-circle-title";
+@use "object/component/c-home-btn";
+@use "object/component/c-label";
+@use "object/component/c-marker-title";
+@use "object/component/c-menu-toggle";
+@use "object/component/c-pagination";
+@use "object/component/c-post-nav";
+@use "object/component/c-thumbnail";
+@use "object/component/c-title-desc";
+@use "object/component/c-archive-border";
+@use "object/component/c-ad-badge";
+
+@use "object/utility/u-mb-8";
+
+@use "object/project/p-404";
+@use "object/project/p-allpost-archive";
+@use "object/project/p-archive-news";
+@use "object/project/p-archive";
+@use "object/project/p-contact";
+@use "object/project/p-footer";
+@use "object/project/p-header";
+@use "object/project/p-hero";
+@use "object/project/p-journal";
+@use "object/project/p-portfolio";
+@use "object/project/p-privacy-policy";
+@use "object/project/p-profile";
+@use "object/project/p-sidebar";
+@use "object/project/p-single";
+@use "object/project/p-thanks";
+@use "object/project/p-top-news";
+@use "object/project/p-appreach";

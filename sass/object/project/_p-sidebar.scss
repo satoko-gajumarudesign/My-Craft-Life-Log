@@ -1,0 +1,109 @@
+.p-sidebar-posts {
+    width: 60%;
+    min-width: 30rem;
+    margin: 0 auto;
+    flex: 2;
+
+    @media (min-width: 1024px) {
+        width: 100%;
+        padding-top: 16rem;
+    }
+}
+
+.p-sidebar-posts--news {
+    @media (min-width: 1024px) {
+        padding-top: 0rem;
+    }
+}
+
+.p-sidebar-posts__title {
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 3px solid var(--color-border);
+    font-weight: bold;
+    font-family: 'Times New Roman', serif;
+    color: var(--text-sub);
+    font-size: var(--fs-md);
+    text-align: center;
+}
+
+.p-sidebar-posts__items {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.p-sidebar-posts__item {
+    position: relative;
+    padding: 1rem 0.5rem 0.5rem;
+    margin-bottom: 5rem;
+    border: 1px solid var(--color-border);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &::before {
+        content: "\f08d";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: -1.5rem;
+        left: 53%;
+        font-size: var(--fs-md);
+        color: var(--color-accent);
+        -webkit-text-stroke: 0.5px var(--text-main);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+        transform: translateX(-50%) rotate(60deg);
+        transition: transform 0.2s ease, color 0.3s ease-in;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+}
+
+.p-sidebar-posts__item:hover:before {
+    color: #11ffee00;
+    transform: translate(0, -10px) rotate(60deg);
+    text-shadow: none;
+    -webkit-text-stroke: #11ffee00;
+}
+
+.p-sidebar-posts__post-title {
+    padding: 0 0.5rem;
+    font-size: var(--fs-sm);
+}
+
+.p-sidebar-posts__post-title--news {
+    padding: 1rem 0.5rem;
+    font-size: var(--fs-sm);
+}
+
+.p-sidebar-posts__time {
+    display: block;
+    font-size: var(--fs-xs);
+    text-align: right;
+}
+
+.p-sidebar-posts__empty {
+    flex: 2;
+    width: 60%;
+    min-width: 30rem;
+    margin: 0 auto;
+
+    @media (min-width: 1024px) {
+        width: 100%;
+        padding-top: 16rem;
+    }
+
+    .p-sidebar-posts__empty-text {
+        color: var(--text-sub);
+        text-align: center;
+    }
+}

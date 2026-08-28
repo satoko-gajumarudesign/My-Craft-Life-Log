@@ -1,0 +1,30 @@
+.p-allpost-archive {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.p-allpost-archive__item {
+    padding-left: 2rem;
+    transition: all 0.3s;
+}
+
+.p-allpost-archive__item:hover {
+    color: var(--color-accent);
+}
+
+.p-allpost-archive__inner {
+    display: flex;
+    gap: 1rem;
+}
+
+.p-allpost-archive__title {
+    padding-left: 3rem;
+}
+
+
+.p-allpost-archive__item:hover .c-label {
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
