@@ -1,0 +1,73 @@
+.c-affiliate-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    margin: auto;
+    padding: 1rem;
+    border: 3px solid var(--color-border);
+    border-radius: 10px;
+    background-color: #fff;
+
+    .c-affiliate-card__link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .c-affiliate-card__figure {
+        width: 60%;
+    }
+
+    .c-affiliate-card__img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .c-affiliate-card__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .c-affiliate-card__title {
+        font-size: var(--fs-xs);
+        line-height: 1.5rem;
+    }
+
+    .c-affiliate-card__action{
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .c-affiliate-card__btn::before{
+        content: "R";
+        margin-right: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        color: #fff;
+        background-color: red;
+        border-radius: 5px;
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+
+
+    .c-affiliate-card__figure {
+        flex: 1;
+        width: 100%;
+    }
+
+    .c-affiliate-card__body {
+        flex: 1;
+    }
+    }
+}
