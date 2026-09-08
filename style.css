@@ -634,6 +634,11 @@ body.no-scroll {
   border: 3px solid var(--color-border);
   border-radius: 10px;
   background-color: #fff;
+  transition: all 0.2s ease;
+}
+.c-affiliate-card:hover {
+  opacity: 0.8;
+  color: var(--color-accent);
 }
 .c-affiliate-card .c-affiliate-card__link::after {
   content: "";
