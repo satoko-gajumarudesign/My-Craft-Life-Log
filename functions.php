@@ -191,6 +191,7 @@ function custom_allowed_block_types($allowed_blocks, $editor_context)
             'core/list',      // リスト全体（ul/ol）
             'core/list-item', // リスト項目（li）
             'core/quote',     // 引用ブロック（blockquote / cite）を追加
+            'core/shortcode', //　ショートコード
             'core/html',      // カスタムHTML
             'loos-hcb/code-block', //Highlighting Code Block
         );
