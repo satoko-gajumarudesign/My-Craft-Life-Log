@@ -250,7 +250,8 @@ function auto_insert_alt_to_images($content)
 // ==========================================
 add_shortcode('a8_item', 'custom_a8_formatter_shortcode');
 
-function custom_a8_formatter_shortcode($atts, $content = null) {
+function custom_a8_formatter_shortcode($atts, $content = null)
+{
     if (!$content) return '';
 
     // PHPのDOMDocumentを使って、貼り付けられたHTMLを安全に解析
@@ -280,31 +281,29 @@ function custom_a8_formatter_shortcode($atts, $content = null) {
 
     // HTMLを組み立てて出力
     ob_start();
-    ?>
-    
-    <div class="p-item-card">
-        <figure class="p-item-card__thumb">
-            <a href="<?php echo esc_url($product_url); ?>" rel="sponsored">
-                <img src="<?php echo esc_url($product_img); ?>" alt="<?php echo esc_html(mb_strimwidth($product_title, 0, 60, '...')); ?>">
-            </a>
+?>
+
+    <article class="c-affiliate-card c-affiliate-card--rakuten">
+        <figure class="c-affiliate-card__figure">
+                <img class="c-affiliate-card__img" src="<?php echo esc_url($product_img); ?>" alt="<?php echo esc_html(mb_strimwidth($product_title, 0, 60, '...')); ?>">
         </figure>
-        
-        <div class="p-item-card__body">
-            <h3 class="p-item-card__title">
-                <a href="<?php echo esc_url($product_url); ?>" rel="sponsored">
+
+        <div class="c-affiliate-card__body">
+            <h3 class="c-affiliate-card__title">
+                <a class="c-affiliate-card__link" href="<?php echo esc_url($product_url); ?>" rel="sponsored" target="_blank">
                     <?php echo esc_html($product_title); ?>
                 </a>
             </h3>
-            <div class="p-item-card__action">
-                <a href="<?php echo esc_url($product_url); ?>" rel="sponsored" class="c-btn c-btn--accent">詳細を見る</a>
+            <div class="c-affiliate-card__action">
+                <span class="c-affiliate-card__btn">楽天市場で見る</span>
             </div>
         </div>
-    </div>
-    
+    </article>
+
     <?php if ($tracking_img) : ?>
         <img border="0" width="1" height="1" src="<?php echo esc_url($tracking_img); ?>" alt="">
     <?php endif; ?>
-    
+
     <?php
     return ob_get_clean();
 }
@@ -421,7 +420,7 @@ function add_google_analytics()
 {
     // 管理画面にログインしている間は計測しない（自分のアクセスを除外して純粋な読者データのみを収集）
     if (! is_user_logged_in()) :
-?>
+    ?>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPEH2DFL2H"></script>
         <script>
