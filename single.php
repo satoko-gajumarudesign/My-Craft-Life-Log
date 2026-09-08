@@ -13,7 +13,7 @@
                         <h1 class="c-circle-title p-single__title">
                             <?php echo esc_html(get_the_title()) ?>
                         </h1>
-                        <?php if (has_category("table")): ?>
+                        <?php if (has_category(array("table","items"))): ?>
                             <span class="c-ad-badge">PR</span>
                         <?php endif; ?>
                     </div>
