@@ -245,6 +245,70 @@ function auto_insert_alt_to_images($content)
 }
 
 // ==========================================
+//A8.net商品リンク自動カスタマイズショートコード
+// ==========================================
+add_shortcode('a8_item', 'custom_a8_formatter_shortcode');
+
+function custom_a8_formatter_shortcode($atts, $content = null) {
+    if (!$content) return '';
+
+    // PHPのDOMDocumentを使って、貼り付けられたHTMLを安全に解析
+    libxml_use_internal_errors(true);
+    $doc = new DOMDocument();
+    $doc->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+    libxml_clear_errors();
+
+    $xpath = new DOMXPath($doc);
+
+    // 必要な要素を自動抽出
+    //リンクURL (最初の <a> タグの href)
+    $link_node = $xpath->query('//a')->item(0);
+    $product_url = $link_node ? $link_node->getAttribute('href') : '';
+
+    // 画像URL (最初の <img> タグの src)
+    $img_node = $xpath->query('//img')->item(0);
+    $product_img = $img_node ? $img_node->getAttribute('src') : '';
+
+    // 商品名 (2番目の <a> タグの中のテキスト)
+    $title_node = $xpath->query('//a')->item(1);
+    $product_title = $title_node ? $title_node->nodeValue : '商品名を取得できませんでした';
+
+    // 成果計測用1px画像 (URLに '.a8.net' が含まれる2番目以降の画像)
+    $tracking_node = $xpath->query('//img[contains(@src, ".a8.net")]')->item(1);
+    $tracking_img = $tracking_node ? $tracking_node->getAttribute('src') : '';
+
+    // HTMLを組み立てて出力
+    ob_start();
+    ?>
+    
+    <div class="p-item-card">
+        <figure class="p-item-card__thumb">
+            <a href="<?php echo esc_url($product_url); ?>" rel="sponsored">
+                <img src="<?php echo esc_url($product_img); ?>" alt="<?php echo esc_html(mb_strimwidth($product_title, 0, 60, '...')); ?>">
+            </a>
+        </figure>
+        
+        <div class="p-item-card__body">
+            <h3 class="p-item-card__title">
+                <a href="<?php echo esc_url($product_url); ?>" rel="sponsored">
+                    <?php echo esc_html($product_title); ?>
+                </a>
+            </h3>
+            <div class="p-item-card__action">
+                <a href="<?php echo esc_url($product_url); ?>" rel="sponsored" class="c-btn c-btn--accent">詳細を見る</a>
+            </div>
+        </div>
+    </div>
+    
+    <?php if ($tracking_img) : ?>
+        <img border="0" width="1" height="1" src="<?php echo esc_url($tracking_img); ?>" alt="">
+    <?php endif; ?>
+    
+    <?php
+    return ob_get_clean();
+}
+
+// ==========================================
 //記事本文の末尾にサンクスメッセージを自動追加する
 // ==========================================
 // @param string $content 記事の本文.
