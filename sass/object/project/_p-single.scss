@@ -31,12 +31,13 @@
 
 .p-single__content {
     h2 {
+        padding-top: 3rem;
         margin-bottom: 2rem;
         font-weight: bold;
     }
 
-    h2:not(:first-of-type) {
-        padding-top: 3rem;
+    h2:first-child {
+        padding-top: 0;
     }
 
     .wp-block-image {

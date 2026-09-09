@@ -1712,11 +1712,12 @@ input[type=checkbox].p-contact__checkbox {
 }
 
 .p-single__content h2 {
+  padding-top: 3rem;
   margin-bottom: 2rem;
   font-weight: bold;
 }
-.p-single__content h2:not(:first-of-type) {
-  padding-top: 3rem;
+.p-single__content h2:first-child {
+  padding-top: 0;
 }
 .p-single__content .wp-block-image {
   max-width: 100%;
