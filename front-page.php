@@ -25,6 +25,8 @@ $journal_sections = [
     ],
 ]; ?>
 
+<?php get_template_part('template-parts/components/opening-animation'); ?>
+
 <div id="journal" class="p-journal l-wrapper">
     <?php
     // 配列をループさせてセクションを自動生成する

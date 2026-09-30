@@ -1984,4 +1984,97 @@ input[type=checkbox].p-contact__checkbox {
   color: #ffc107;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.opening__screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  overflow: hidden;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.opening__container {
+  position: absolute;
+  left: clamp(80px, 15vw, 200px);
+  width: clamp(80px, 15vw, 200px);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+@keyframes runDog {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+}
+.opening__frame {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  animation: animateDogFrames 0.5s steps(1) infinite;
+}
+
+@keyframes animateDogFrames {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.1%, 100% {
+    opacity: 0;
+  }
+}
+.opening__frame--2 {
+  animation-delay: 0.25s;
+}
+
+.opening__title {
+  color: var(--text-main);
+  font-size: var(--fs-lg);
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .opening__title {
+    font-size: var(--fs-xl);
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+}
+.is-loaded .opening__container {
+  animation: runDog 2s linear forwards;
+}
+
+.is-loaded .opening__title {
+  animation: textFadeIn 1s ease 1s forwards;
 }/*# sourceMappingURL=style.css.map */

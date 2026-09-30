@@ -1,3 +1,28 @@
+// サイト訪問時アニメーション
+window.addEventListener("load", function () {
+    const openingScreen = document.getElementById("opening-screen");
+    if (!openingScreen) return;
+
+    const today = new Date().toLocaleDateString();
+
+    const visitedDate = localStorage.getItem("visitedDate");
+
+    if (today === visitedDate) {
+        openingScreen.remove();
+        return;
+    }
+
+    localStorage.setItem("visitedDate", today);
+    openingScreen.classList.add("is-loaded");
+
+    setTimeout(() => {
+        openingScreen.classList.add("is-hidden")
+        setTimeout(() => {
+            openingScreen.remove();
+        }, 1000);
+    }, 2000);
+});
+
 // SPメニューの開閉処理
 const menuToggle = document.querySelector('.c-menu-toggle');
 const drawer = document.getElementById('drawer');
