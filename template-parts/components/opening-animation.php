@@ -4,7 +4,7 @@
         <img src="<?php echo get_theme_file_uri('/assets/img/run_dog-frame2.svg'); ?>" alt="走る犬 フレーム2" class="opening__frame opening__frame--2">
     </div>
 
-    <p class="opening__title">My Craft & Life Log</p>
+    <p class="opening__title">Welcome!</p>
 </div>
 
 <script>
