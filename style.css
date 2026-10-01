@@ -2049,6 +2049,9 @@ input[type=checkbox].p-contact__checkbox {
 .opening__title {
   color: var(--text-main);
   font-size: var(--fs-lg);
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
   opacity: 0;
 }
 @media (min-width: 768px) {
@@ -2062,7 +2065,7 @@ input[type=checkbox].p-contact__checkbox {
     opacity: 0;
     transform: translateX(-15px);
   }
-  80% {
+  70% {
     opacity: 1;
     transform: translateY(0);
   }
