@@ -17,7 +17,7 @@
         <div class="p-header l-wrapper">
             <div class="p-header__title">
                 <a class="p-header__link" href="<?php echo esc_url(home_url('/')); ?>">
-                    <img class="p-header__img" src="<?php echo get_theme_file_uri('/assets/img/logo.svg') ?>" alt="">
+                    <img class="p-header__img" src="<?php echo get_theme_file_uri('/assets/img/logo.svg') ?>" alt="My Craft & Life Log" data-no-lazy="1" loading="eager">
                 </a>
             </div>
             <?php
