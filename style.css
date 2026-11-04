@@ -1499,6 +1499,47 @@ input[type=checkbox].p-contact__checkbox {
   margin-bottom: 8rem;
 }
 
+h2 {
+  font-size: var(--fs-lg);
+  font-weight: bold;
+}
+
+.is-scroll-gallery {
+  display: flex;
+  gap: 16px;
+}
+
+.is-scroll-gallery .wp-block-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 767px) {
+  .is-scroll-gallery {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+  }
+  .is-scroll-gallery .wp-block-image {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+  }
+}
+@media (min-width: 768px) {
+  .is-scroll-gallery {
+    overflow-x: visible;
+  }
+  .is-scroll-gallery .wp-block-image {
+    flex: 1;
+    min-width: 0;
+  }
+}
 .p-privacy-policy .wp-block-heading {
   padding-top: 2rem;
   font-size: var(--fs-md);
