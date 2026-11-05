@@ -10,16 +10,15 @@ h2 {
 .is-scroll-gallery {
     display: flex;
     gap: 16px;
-}
 
-.is-scroll-gallery .wp-block-image img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    display: block;
-    object-fit: cover;
-    object-position: center;
+    .wp-block-image img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
 }
-
 
 @media (max-width: 767px) {
     .is-scroll-gallery {
@@ -27,21 +26,72 @@ h2 {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 12px;
-    }
 
-    .is-scroll-gallery .wp-block-image {
-        flex: 0 0 80%;
-        scroll-snap-align: start;
+        .wp-block-image {
+            flex: 0 0 80%;
+            scroll-snap-align: start;
+        }
     }
 }
 
 @media (min-width: 768px) {
     .is-scroll-gallery {
         overflow-x: visible;
+
+        .wp-block-image {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+}
+
+.wp-block-details.is-accordion {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-block: 24px;
+    overflow: hidden;
+
+    summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        list-style: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #f9f9f9;
+        }
+
+        &::after {
+            content: "＋";
+            font-size: 3rem;
+            font-weight: normal;
+            line-height: 1;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
     }
 
-    .is-scroll-gallery .wp-block-image {
-        flex: 1;
-        min-width: 0;
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    >*:not(summary) {
+        padding-inline: 20px;
+        margin-block: 16px;
+    }
+}
+
+.wp-block-details.is-accordion[open] {
+    summary {
+        border-bottom: 1px solid #e0e0e0;
+
+        &::after {
+            content: "－";
+        }
     }
 }
