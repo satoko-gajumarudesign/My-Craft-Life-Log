@@ -1498,10 +1498,58 @@ input[type=checkbox].p-contact__checkbox {
 .p-portfolio {
   margin-bottom: 8rem;
 }
-
-h2 {
+.p-portfolio h2 {
   font-size: var(--fs-lg);
   font-weight: bold;
+  position: relative;
+  padding-left: 10px;
+  z-index: 1;
+}
+.p-portfolio h2::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: -5px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color-accent);
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: -1;
+}
+.p-portfolio h3 {
+  margin: 3rem 0 2rem 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.is-portfolio-link {
+  margin: 0.5rem 0 2rem 1rem;
+  font-weight: bold;
+  color: var(--text-sub);
+}
+.is-portfolio-link a {
+  transition: color 0.2s ease;
+}
+.is-portfolio-link a::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: var(--text-sub);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: background-color 0.2s ease;
+}
+.is-portfolio-link a:hover {
+  color: var(--color-accent);
+}
+.is-portfolio-link a:hover::after {
+  background-color: var(--color-accent);
 }
 
 .is-scroll-gallery {
@@ -1516,6 +1564,7 @@ h2 {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  border-radius: 2px;
 }
 
 @media (max-width: 767px) {
@@ -1539,6 +1588,33 @@ h2 {
     min-width: 0;
   }
 }
+.p-spec-list {
+  grid-template-columns: 1fr;
+  display: grid;
+  gap: 0.5rem;
+  padding-inline: 16px;
+  margin-bottom: 24px;
+}
+.p-spec-list dt,
+.p-spec-list dd {
+  width: 100%;
+  margin: 0;
+  line-height: 1.6;
+}
+.p-spec-list dd {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .p-spec-list {
+    grid-template-columns: 120px 1fr;
+    gap: 1.8rem 3rem;
+  }
+  .p-spec-list dd {
+    padding: 0;
+  }
+}
+
 .wp-block-details.is-accordion {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -1570,16 +1646,79 @@ h2 {
 .wp-block-details.is-accordion summary::-webkit-details-marker {
   display: none;
 }
-.wp-block-details.is-accordion > *:not(summary) {
-  padding-inline: 20px;
-  margin-block: 16px;
-}
 
 .wp-block-details.is-accordion[open] summary {
   border-bottom: 1px solid #e0e0e0;
 }
 .wp-block-details.is-accordion[open] summary::after {
   content: "－";
+}
+
+.p-details-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 24px;
+  padding-inline: 16px;
+}
+.p-details-list dt,
+.p-details-list dd {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.p-details-list dt:last-of-type,
+.p-details-list dd:last-of-type {
+  border-bottom: none;
+}
+
+.p-details-list dt {
+  font-weight: bold;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.p-details-list dd {
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 16px 0;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .p-details-list dt {
+    width: 25%;
+    padding: 16px 0 16px 24px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .p-details-list dd {
+    width: 75%;
+    padding: 16px 0 16px 24px;
+  }
+}
+.p-details-list dd ul {
+  margin: 0;
+}
+
+.p-details-list dd li {
+  list-style: none;
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+.p-details-list dd li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+}
+
+.p-details-list dd li:last-child {
+  margin-bottom: 0;
 }
 
 .p-privacy-policy .wp-block-heading {
