@@ -285,7 +285,7 @@ function custom_a8_formatter_shortcode($atts, $content = null)
 
     <article class="c-affiliate-card c-affiliate-card--rakuten">
         <figure class="c-affiliate-card__figure">
-                <img class="c-affiliate-card__img" src="<?php echo esc_url($product_img); ?>" alt="<?php echo esc_html(mb_strimwidth($product_title, 0, 60, '...')); ?>">
+            <img class="c-affiliate-card__img" src="<?php echo esc_url($product_img); ?>" alt="<?php echo esc_html(mb_strimwidth($product_title, 0, 60, '...')); ?>">
         </figure>
 
         <div class="c-affiliate-card__body">
@@ -339,8 +339,11 @@ function disable_h1_in_heading_block($args, $block_type)
         return $args;
     }
 
-    // ドロップダウンの選択肢をH2のみに上書き設定する
-    $args['attributes']['levelOptions']['default'] = [2];
+    // ドロップダウンの選択肢を制限する
+    $args['attributes']['levelOptions']['default'] = [2, 3];
+
+    // ブロックを配置した時の初期値をH2にする
+    $args['attributes']['level']['default'] = 2;
 
     return $args;
 }
