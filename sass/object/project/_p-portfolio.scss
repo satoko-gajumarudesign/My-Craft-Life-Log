@@ -12,12 +12,6 @@
         padding-left: 0.5rem;
         border-left: 3px solid var(--color-accent);
     }
-}
-
-.is-portfolio-link {
-    margin: 0.5rem 0 2rem 1rem;
-    font-weight: bold;
-    color: var(--text-sub);
 
     a {
         transition: color 0.2s ease;
@@ -45,6 +39,12 @@
             }
         }
     }
+}
+
+.is-portfolio-link {
+    margin: 0.5rem 0 2rem 1rem;
+    font-weight: bold;
+    color: var(--text-sub);
 }
 
 .is-scroll-gallery {
@@ -106,12 +106,28 @@
     }
 
     @media (min-width: 768px) {
-        grid-template-columns: 120px 1fr;
+        grid-template-columns: max-content 1fr;
         gap: 1.8rem 3rem;
 
         dd {
             padding: 0;
         }
+    }
+}
+
+
+.p-spec-list__git {
+    color: var(--text-sub);
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: var(--color-accent);
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        // margin-right: 8px;
     }
 }
 

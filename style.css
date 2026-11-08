@@ -1522,16 +1522,10 @@ input[type=checkbox].p-contact__checkbox {
   padding-left: 0.5rem;
   border-left: 3px solid var(--color-accent);
 }
-
-.is-portfolio-link {
-  margin: 0.5rem 0 2rem 1rem;
-  font-weight: bold;
-  color: var(--text-sub);
-}
-.is-portfolio-link a {
+.p-portfolio a {
   transition: color 0.2s ease;
 }
-.is-portfolio-link a::after {
+.p-portfolio a::after {
   content: "";
   display: inline-block;
   width: 18px;
@@ -1545,11 +1539,17 @@ input[type=checkbox].p-contact__checkbox {
   mask-repeat: no-repeat;
   transition: background-color 0.2s ease;
 }
-.is-portfolio-link a:hover {
+.p-portfolio a:hover {
   color: var(--color-accent);
 }
-.is-portfolio-link a:hover::after {
+.p-portfolio a:hover::after {
   background-color: var(--color-accent);
+}
+
+.is-portfolio-link {
+  margin: 0.5rem 0 2rem 1rem;
+  font-weight: bold;
+  color: var(--text-sub);
 }
 
 .is-scroll-gallery {
@@ -1607,12 +1607,24 @@ input[type=checkbox].p-contact__checkbox {
 }
 @media (min-width: 768px) {
   .p-spec-list {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: max-content 1fr;
     gap: 1.8rem 3rem;
   }
   .p-spec-list dd {
     padding: 0;
   }
+}
+
+.p-spec-list__git {
+  color: var(--text-sub);
+  transition: color 0.2s ease;
+}
+.p-spec-list__git:hover {
+  color: var(--color-accent);
+}
+.p-spec-list__git svg {
+  width: 20px;
+  height: 20px;
 }
 
 .wp-block-details.is-accordion {
