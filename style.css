@@ -1520,6 +1520,7 @@ input[type=checkbox].p-contact__checkbox {
 .p-portfolio h3 {
   margin: 3rem 0 2rem 0.5rem;
   padding-left: 0.5rem;
+  font-weight: bold;
   border-left: 3px solid var(--color-accent);
 }
 .p-portfolio a {
